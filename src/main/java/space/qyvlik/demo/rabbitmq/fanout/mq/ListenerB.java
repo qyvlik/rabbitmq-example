@@ -6,18 +6,14 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Listener {
+public class ListenerB {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @RabbitListener(queues = "${rabbitmq.fanout.queue.a}")
-    public void handleQueueA(int index) {
-        logger.info("handleQueueA:{}", index);
-    }
 
     @RabbitListener(queues = "${rabbitmq.fanout.queue.b}")
     public void handleQueueB(int index) {
-        logger.info("handleQueueB:{}", index);
+        logger.info("handleQueueB:{} {}", index, Thread.currentThread().getId());
     }
 
 }
