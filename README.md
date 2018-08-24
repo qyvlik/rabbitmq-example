@@ -1,0 +1,2 @@
+# rabbitmq-fanout
+rabbitmq-fanout
