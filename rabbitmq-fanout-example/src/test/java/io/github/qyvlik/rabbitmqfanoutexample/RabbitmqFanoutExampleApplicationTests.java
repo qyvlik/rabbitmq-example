@@ -1,4 +1,4 @@
-package space.qyvlik.demo.rabbitmq.fanout;
+package io.github.qyvlik.rabbitmqfanoutexample;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RabbitmqFanoutApplicationTests {
+public class RabbitmqFanoutExampleApplicationTests {
 
 	@Test
 	public void contextLoads() {

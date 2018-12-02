@@ -1,4 +1,4 @@
-package space.qyvlik.demo.rabbitmq.fanout.config;
+package io.github.qyvlik.rabbitmqfanoutexample.config;
 
 import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;

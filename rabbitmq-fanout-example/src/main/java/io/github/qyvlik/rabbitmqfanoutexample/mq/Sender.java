@@ -1,4 +1,4 @@
-package space.qyvlik.demo.rabbitmq.fanout.mq;
+package io.github.qyvlik.rabbitmqfanoutexample.mq;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
