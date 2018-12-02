@@ -21,9 +21,14 @@ public class RabbitmqDynamicApplication {
     @Autowired
     @Qualifier("producerDeclarer")
     private ProducerDeclarer producerDeclarer;
+
     @Autowired
     @Qualifier("listenerInstaller")
     private ListenerInstaller listenerInstaller;
+
+    @Autowired
+    @Qualifier("consumerHandle")
+    private ConsumerHandle consumerHandle;
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -45,7 +50,7 @@ public class RabbitmqDynamicApplication {
                 queueName,
                 1,
                 AcknowledgeMode.AUTO,
-                new ConsumerHandle());
+                consumerHandle);
 
         rabbitTemplate.convertAndSend(queueName, new MyMessage("here is form dynamic producer"));
 

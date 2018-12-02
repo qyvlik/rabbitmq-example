@@ -10,7 +10,7 @@ public class MyMessage implements Serializable {
     }
 
     public MyMessage(String name) {
-
+        this.name = name;
     }
 
     public String getName() {
@@ -19,5 +19,12 @@ public class MyMessage implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "MyMessage{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

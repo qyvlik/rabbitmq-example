@@ -1,5 +1,6 @@
 package io.github.qyvlik.rabbitmqdynamic.config;
 
+import io.github.qyvlik.rabbitmqdynamic.handle.ConsumerHandle;
 import io.github.qyvlik.rabbitmqdynamic.mq.ListenerInstaller;
 import io.github.qyvlik.rabbitmqdynamic.mq.ProducerDeclarer;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -33,5 +34,12 @@ public class RabbitmqDynamicConfig {
         listenerInstaller.setMessageConverter(jackson2JsonMessageConverter);
 
         return listenerInstaller;
+    }
+
+    @Bean
+    public ConsumerHandle consumerHandle(Jackson2JsonMessageConverter jackson2JsonMessageConverter) {
+        ConsumerHandle consumerHandle = new ConsumerHandle();
+        consumerHandle.setJackson2JsonMessageConverter(jackson2JsonMessageConverter);
+        return consumerHandle;
     }
 }
