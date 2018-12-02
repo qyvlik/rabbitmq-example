@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>space.qyvlik.demo</groupId>
-	<artifactId>rabbitmq-fanout</artifactId>
+	<groupId>io.github.qyvlik</groupId>
+	<artifactId>rabbitmq-example</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>rabbitmq-fanout</name>
-	<description>rabbitmq-fanout</description>
+	<name>rabbitmq-example</name>
+	<description>rabbitmq-example</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
