@@ -40,10 +40,10 @@ public class RabbitmqDynamicApplication {
     @PostConstruct
     public void testDynamic() {
         String queueName = "dynamic.queue";
-        String routingKey = "dynamic.fanout";
+        String exchange = "dynamic.fanout";
 
         Queue queue = producerDeclarer.declareQueue(queueName, false);
-        FanoutExchange fanoutExchange = producerDeclarer.declareFanoutExchange(routingKey, false, true);
+        FanoutExchange fanoutExchange = producerDeclarer.declareFanoutExchange(exchange, false, true);
         producerDeclarer.bindingFanoutExchange4Queue(fanoutExchange, queue);
 
         listenerInstaller.install("",
@@ -52,7 +52,7 @@ public class RabbitmqDynamicApplication {
                 AcknowledgeMode.AUTO,
                 consumerHandle);
 
-        rabbitTemplate.convertAndSend(queueName, new MyMessage("here is form dynamic producer"));
+        rabbitTemplate.convertAndSend(exchange, "", new MyMessage("here is form dynamic producer"));
 
     }
 }
