@@ -15,6 +15,7 @@ public class Sender {
     private String fanoutExchangeName;
 
     public void send(int index) {
+        // 直接发送到 exchange
         rabbitTemplate.convertAndSend(fanoutExchangeName, "", index);
     }
 }

@@ -39,14 +39,6 @@ public class ProducerConfig {
     }
 
     @Bean
-    public RabbitMessagingTemplate rabbitMessagingTemplate(RabbitTemplate rabbitTemplate) {
-        RabbitMessagingTemplate rabbitMessagingTemplate = new RabbitMessagingTemplate();
-        rabbitMessagingTemplate.setMessageConverter(jackson2Converter());
-        rabbitMessagingTemplate.setRabbitTemplate(rabbitTemplate);
-        return rabbitMessagingTemplate;
-    }
-
-    @Bean
     public MappingJackson2MessageConverter jackson2Converter() {
         MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
         return converter;
